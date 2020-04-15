@@ -6,9 +6,8 @@ module.exports = function (amount) {
   for (var id = 1; id <= amount; id++) {
     let entity = {
       id: id,
-      avatar: faker.image.avatar(),
     };
-    Object.assign(entity, faker.helpers.createCard());
+    Object.assign(entity, faker.helpers.contextualCard());
     entities.push(entity);
   }
 

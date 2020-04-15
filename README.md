@@ -3,7 +3,6 @@
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/bgpedersen/json-server-with-data.svg)](https://github.com/bgpedersen/json-server-with-data/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/bgpedersen/json-server-with-data.svg)](https://github.com/bgpedersen/json-server-with-data/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 ---
 
@@ -16,6 +15,7 @@ Get up and running with pre-filled JSON API server
   - [About](#about)
   - [Getting Started](#getting-started)
   - [Running the server](#running-the-server)
+  - [Using the endpoints](#using-the-endpoints)
   - [Modify data](#modify-data)
 
 ## About
@@ -37,6 +37,27 @@ To run the server
 ```bash
 npm run start
 ```
+
+## Using the endpoints
+
+The following HTTP endpoints are created automatically by JSON server:
+
+```text
+GET    /employees
+GET    /employees/{id}
+POST   /employees
+PUT    /employees/{id}
+PATCH  /employees/{id}
+DELETE /employees/{id}
+```
+
+Using queries
+
+```text
+http://localhost:3000/employees?first_name=John
+```
+
+For the complete documentation, see [json-server](https://github.com/typicode/json-server) and [FakerJS](https://github.com/marak/Faker.js/)
 
 ## Modify data
 
