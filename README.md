@@ -40,20 +40,20 @@ npm run start
 
 ## Modify data
 
-For seperations of concern and to be flexible, create each REST API endpoints in `data/` as a `.js` file. See `employee.js` as example.
+For seperations of concern and to be flexible, create each REST API endpoints in `data/` as a `.js` file. See `data/employees.js` as example.
 
-`employee.js`
+`data/employees.js`
 
 ```javascript
 var faker = require('faker');
 
-module.exports = function generateEmployees(amount) {
-  var employees = [];
+module.exports = function (amount) {
+  var entities = [];
   for (var id = 0; id < amount; id++) {
     var firstName = faker.name.firstName();
     var lastName = faker.name.lastName();
     var email = faker.internet.email();
-    employees.push({
+    entities.push({
       id: id,
       first_name: firstName,
       last_name: lastName,
@@ -61,7 +61,7 @@ module.exports = function generateEmployees(amount) {
       type: 'employee',
     });
   }
-  return employees;
+  return entities;
 };
 ```
 
