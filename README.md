@@ -1,8 +1,8 @@
 # JSON API server with flexible data
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/bgpedersen/json-api-server-with-data.svg)](https://github.com/bgpedersen/json-api-server-with-data/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/bgpedersen/json-api-server-with-data.svg)](https://github.com/bgpedersen/json-api-server-with-data/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/bgpedersen/json-server-with-data.svg)](https://github.com/bgpedersen/json-server-with-data/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/bgpedersen/json-server-with-data.svg)](https://github.com/bgpedersen/json-server-with-data/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 ---
