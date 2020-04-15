@@ -7,7 +7,7 @@
 
 ---
 
-Quickly get up and running with JSON API server filled with flexible data.
+Get up and running with pre-filled JSON API server
 
 ## 📝 Table of Contents
 
