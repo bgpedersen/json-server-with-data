@@ -76,12 +76,13 @@ GET   http://localhost:3000/companies
 
 ## Modify data
 
-For seperations of concerns each REST API endpoints is located in `data/` as a `.js` file. See `data/employees.js` as example.
+For seperations of concerns each REST API endpoints is located in `data/` as a `.js` file:
 
-`data/employees.js`
+`data/users.js`
 
 ```javascript
 var faker = require('faker');
+var generatePosts = require('./posts');
 
 module.exports = function (amount) {
   var entities = [];
@@ -89,9 +90,15 @@ module.exports = function (amount) {
   for (var id = 1; id <= amount; id++) {
     let entity = {
       id: id,
+      firstname: faker.name.firstName(),
+      lastname: faker.name.lastName(),
+      username: faker.internet.userName(),
+      email: faker.internet.email(),
+      password: faker.internet.password(),
+      color: faker.commerce.color(),
       avatar: faker.image.avatar(),
+      Posts: generatePosts(faker.random.number(10), id),
     };
-    Object.assign(entity, faker.helpers.createCard());
     entities.push(entity);
   }
 
@@ -106,12 +113,12 @@ Control the endpoints to include, and the amount of entities to be created:
 ```javascript
 function generateDB() {
   return {
-    employees: require('./data/employees')(50), // 50 employees
-    users: require('./data/users')(50), // 50 users
-    posts: require('./data/posts')(50, 50), // 50 posts, each with user id from 1-50 (second argument is userCount)
-    images: require('./data/images')(20), // 20 images
-    galleries: require('./data/galleries')(5), // 5 galleries with Image array of 0-20 images
-    companies: require('./data/companies')(3), // 3 companies with Employees array of 0-20 employees
+    employees: require('./data/employees')(50),
+    users: require('./data/users')(50),
+    posts: require('./data/posts')(50),
+    images: require('./data/images')(20),
+    galleries: require('./data/galleries')(5),
+    companies: require('./data/companies')(3),
   };
 }
 module.exports = generateDB;
