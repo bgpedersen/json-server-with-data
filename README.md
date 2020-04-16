@@ -37,6 +37,15 @@ npm run start
 
 ## Using the endpoints
 
+Available endpoints
+
+- employees
+- users
+- posts
+- images
+- galleries
+- companies
+
 All HTTP endpoints can be used with REST actions:
 
 ```text
@@ -54,7 +63,7 @@ Using queries
 http://localhost:3000/employees?first_name=John
 ```
 
-Examples
+Get examples
 
 ```text
 GET   http://localhost:3000/employees   // get all employees (has avatar and company_id and alot of employee info)
@@ -66,8 +75,6 @@ GET   http://localhost:3000/companies   // get all companies (with included Empl
 
 
 ```
-
-For the complete documentation, see [json-server](https://github.com/typicode/json-server) and [FakerJS](https://github.com/marak/Faker.js/)
 
 ## Modify data
 
