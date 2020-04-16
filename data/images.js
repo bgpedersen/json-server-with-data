@@ -1,6 +1,6 @@
 var faker = require('faker');
 
-module.exports = function (amount) {
+module.exports = function (amount, galleryId) {
   var entities = [];
 
   for (var id = 1; id <= amount; id++) {
@@ -10,6 +10,7 @@ module.exports = function (amount) {
       description: faker.lorem.sentences(),
       url: faker.image.image(),
     };
+    if (galleryId) entity.galleryId = galleryId;
     entities.push(entity);
   }
 

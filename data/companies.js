@@ -10,9 +10,8 @@ module.exports = function (amount) {
       image: faker.image.business(),
       title: faker.company.companyName(),
       phrase: faker.company.catchPhrase(),
-      Employees: generateEmployees(faker.random.number(20)),
+      Employees: generateEmployees(faker.random.number(20), id),
     };
-    Object.assign(entity, faker.helpers.createCard());
     entities.push(entity);
   }
 

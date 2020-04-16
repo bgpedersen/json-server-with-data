@@ -39,41 +39,39 @@ npm run start
 
 Available endpoints
 
-- employees
-- users
-- posts
-- images
-- galleries
-- companies
+- **users** (simple info + avatar + array of Posts)
+- **posts** (simple info + userId if created from User)
+- **images** (simple info + galleryId if created from Gallery)
+- **galleries** (simple info + array of Images)
+- **employees** (lot of info + companyId if created from Company)
+- **companies** (simple info + image + array of Employees)
 
 All HTTP endpoints can be used with REST actions:
 
 ```text
-GET    /employees
-GET    /employees/{id}
-POST   /employees
-PUT    /employees/{id}
-PATCH  /employees/{id}
-DELETE /employees/{id}
+GET    /users
+GET    /users/{id}
+POST   /users
+PUT    /users/{id}
+PATCH  /users/{id}
+DELETE /users/{id}
 ```
 
 Using queries
 
 ```text
-http://localhost:3000/employees?first_name=John
+http://localhost:3000/users?firstname=John
 ```
 
-Get examples
+GET examples
 
 ```text
-GET   http://localhost:3000/employees   // get all employees (has avatar and company_id and alot of employee info)
-GET   http://localhost:3000/users       // get all users (a lot of user info)
-GET   http://localhost:3000/posts       // get all posts (with user_id, image, likes, etc.)
-GET   http://localhost:3000/images      // get all images (url, title, description)
-GET   http://localhost:3000/galleries   // get all galleries (with included Images array, 0-20 images each)
-GET   http://localhost:3000/companies   // get all companies (with included Employees array, 0-20 employees each)
-
-
+GET   http://localhost:3000/users
+GET   http://localhost:3000/posts
+GET   http://localhost:3000/images
+GET   http://localhost:3000/galleries
+GET   http://localhost:3000/employees
+GET   http://localhost:3000/companies
 ```
 
 ## Modify data

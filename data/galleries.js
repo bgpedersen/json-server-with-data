@@ -7,7 +7,8 @@ module.exports = function (amount) {
   for (var id = 1; id <= amount; id++) {
     let entity = {
       id: id,
-      Images: generateImages(faker.random.number(20)),
+      title: faker.lorem.sentence(),
+      Images: generateImages(faker.random.number(20), id),
     };
     entities.push(entity);
   }
