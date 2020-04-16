@@ -1,4 +1,5 @@
 var faker = require('faker');
+var generateEmployees = require('./employees');
 
 module.exports = function (amount) {
   var entities = [];
@@ -6,8 +7,10 @@ module.exports = function (amount) {
   for (var id = 1; id <= amount; id++) {
     let entity = {
       id: id,
-      avatar: faker.image.avatar(),
-      company_id: faker.random.number(3),
+      image: faker.image.business(),
+      title: faker.company.companyName(),
+      phrase: faker.company.catchPhrase(),
+      Employees: generateEmployees(faker.random.number(20)),
     };
     Object.assign(entity, faker.helpers.createCard());
     entities.push(entity);

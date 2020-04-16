@@ -6,10 +6,10 @@ module.exports = function (amount) {
   for (var id = 1; id <= amount; id++) {
     let entity = {
       id: id,
-      avatar: faker.image.avatar(),
-      company_id: faker.random.number(3),
+      title: faker.lorem.sentence(),
+      description: faker.lorem.sentences(),
+      url: faker.image.image(),
     };
-    Object.assign(entity, faker.helpers.createCard());
     entities.push(entity);
   }
 
